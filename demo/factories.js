@@ -325,6 +325,26 @@ datamodule.factory('DataApi',['$q','UserData','RedditApi', function($q,UserData,
 			if(calkey == 'all'){
 				var ActiveCalObj = UserData.calendar.total;
 			}
+
+			if else(_.isArray(calkey)){
+				if(calkey.length == 0){console.error("Calkey Not Valid")}
+				else {
+					if(calkey.length == 1){
+						var ActiveCalObj = UserData.calendar[calkey[0]];
+					}
+					if(calkey.length == 2){
+						var ActiveCalObj = UserData.calendar[calkey[0]][calkey[1]];
+					}
+					if(calkey.length == 3){
+						var ActiveCalObj = UserData.calendar[calkey[0]][calkey[1]][calkey[2]];
+					}
+				}
+			}
+
+			else{
+				console.error("Calkey Not Valid");
+			}
+
 			return ActiveCalObj;
 		}
 	};
