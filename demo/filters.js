@@ -1,5 +1,5 @@
 
-datamodule.filter('humanize', function() {
+app.filter('humanize', function() {
    return function(input, anniversary) {
       var original_date = moment(input, "X");
       var now = moment();
@@ -20,7 +20,7 @@ datamodule.filter('humanize', function() {
   }
 });
 
-datamodule.filter('percent', function() {
+app.filter('percent', function() {
    return function(input,total) {
      var result = (input/ total) * 100;
      result = result.toFixed(2);

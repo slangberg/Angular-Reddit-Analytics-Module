@@ -1,4 +1,4 @@
-var app = angular.module('demoapp', ['datamodule']);
+var app = angular.module('demoapp', ['reddit-data-module']);
 
 app.controller('MainController', ['$scope','DataApi',function($scope,DataApi){
 	$scope.status_msg = "Awaiting Username";

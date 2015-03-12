@@ -1,6 +1,6 @@
-var datamodule = angular.module('datamodule', []);
+var redditdatamodule = angular.module('reddit-data-module', []);
 
-datamodule.value('UserData', {
+redditdatamodule.value('UserData', {
 	user_name:"",
 	calendar: { years:{}},
 	user_data: {},
@@ -8,8 +8,7 @@ datamodule.value('UserData', {
 	datacomplete:false,
 });
 
-
-datamodule.value('ApiUrls', {
+redditdatamodule.value('ApiUrls', {
 	amount: 100,
 	user_url: "http://www.reddit.com/user/",
   user_posts: "/submitted/.json?limit=",
@@ -24,15 +23,13 @@ datamodule.value('ApiUrls', {
 	}
 });
 
-
-datamodule.value('ActiveCalObj', {
+redditdatamodule.value('ActiveCalObj', {
 	name:"",
 	key: {},
 	data: {},
 });
 
-
-datamodule.factory('RedditApi', ['$http','$q','ApiUrls','UserData','Calendar', function($http,$q,ApiUrls,UserData,Calendar){
+redditdatamodule.factory('RedditApi', ['$http','$q','ApiUrls','UserData','Calendar', function($http,$q,ApiUrls,UserData,Calendar){
 	var master_count  = 0;
 
 	function cleanListing(result){
@@ -159,8 +156,7 @@ datamodule.factory('RedditApi', ['$http','$q','ApiUrls','UserData','Calendar', f
 	}
 }])
 
-
-datamodule.factory('DataObj',function(){
+redditdatamodule.factory('DataObj',function(){
 	var date_object = {
     		name:"",
     		empty:true,
@@ -273,10 +269,7 @@ datamodule.factory('DataObj',function(){
     }
 })
 
-
-
-
-datamodule.factory('Calendar', ['DataObj','UserData', function(DataObj,UserData){
+redditdatamodule.factory('Calendar', ['DataObj','UserData', function(DataObj,UserData){
 		function stripNeg(val){
 			return val *= -1;
 		}
@@ -344,7 +337,7 @@ datamodule.factory('Calendar', ['DataObj','UserData', function(DataObj,UserData)
 	}
 }])
 
-datamodule.factory('DataApi',['$q','UserData','RedditApi', function($q,UserData,RedditApi){
+redditdatamodule.factory('DataApi',['$q','UserData','RedditApi', function($q,UserData,RedditApi){
 	return{
 		setData:function(term){
 			var deferred = $q.defer();
