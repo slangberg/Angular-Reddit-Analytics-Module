@@ -1,5 +1,3 @@
-var datamodule = angular.module('datamodule', []);
-
 var app = angular.module('demoapp', ['datamodule']);
 
 app.controller('MainController', ['$scope','DataApi',function($scope,DataApi){

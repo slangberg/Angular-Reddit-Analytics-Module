@@ -9,7 +9,7 @@
 <body ng-controller="MainController">
 	<h1>Reddit Analytics</h1>
 	<input ng-model="searchtext.text"><button ng-click="setData(searchtext.text)">Get User Data</button>
-	<div class="status">{{status_msg}}</div>
+	<div class="status">Module Status: {{status_msg}}</div>
 	<div id="user_output" ng-show="isloaded">
 	<h1>Username: {{searchtext.text}}</h1>
 	 <ul>
@@ -24,10 +24,11 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+ 	<script type="text/javascript" src="../dist/reddit_data.js"></script>
+  <script type="text/javascript" src="../dist/plugins/moment-duration-format.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="directives.js"></script>
   <script type="text/javascript" src="filters.js"></script>
-  <script type="text/javascript" src="../dist/reddit_data.js"></script>
-  <script type="text/javascript" src="../dist/plugins/moment-duration-format.js"></script>
+
 </body>
 </html>
