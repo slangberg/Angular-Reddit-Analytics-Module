@@ -1,0 +1,3 @@
+var datamodule = angular.module('datamodule', []);
+
+var app = angular.module('demoapp', ['datamodule']);

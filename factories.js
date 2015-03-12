@@ -69,6 +69,7 @@ datamodule.factory('RedditApi', ['$http','$q','ApiUrls','UserData','Calendar', f
 	function isDataLoaded(alldeferred){
 		if(UserData.beenEdited == 3){
 			alldeferred.resolve(UserData);
+			UserData.datacomplete = true;
 		}
 	}
 

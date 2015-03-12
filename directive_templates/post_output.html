@@ -1,0 +1,9 @@
+<div id="post_output">
+	<h3 class="post_title"><a ng-href="{{postdata.permalink}}">{{postdata.title}}</a></h3>
+	<img ng-src="{{postdata.thumbnail}}"/>
+	<ul class="post_details">
+		<li>Rank: {{postdata.rank}} </li>
+		<li>Karma: {{postdata.score}} </li>
+		<li>Percent Of Total Karma: {{postdata.score | percent:totalkar }} %</li>
+	</ul>
+</div>

@@ -1,0 +1,5 @@
+<div ng-repeat="post in posts | orderBy:'score'">
+	<h3>{{post.title}}</h3>
+	<img src="{{post.thumbnail}}"/>
+	<div>Total: {{post.score}} </div>
+</div>
